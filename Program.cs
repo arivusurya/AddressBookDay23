@@ -8,16 +8,18 @@
             Contacts Contact1 = new Contacts("ares","zeus","olympus","12345678","areszeus@godofgreek.com");
             Contacts Contact2 = new Contacts("athena","Zeus","olympus","12344545","athena@godofgreek.com");
             Contacts Contact3 = new Contacts(firstName: "Loki","odinson","Asgard","987654321","Loki@godofasgrad.com");
-            Contacts Contact4 = new Contacts(firstName: "Loki","odinson","Asgard","987654321","Loki@godofasgrad.com");
 
             myAddressBook.AddContact(Contact1);
             myAddressBook.AddContact(Contact2);
             myAddressBook.AddContact(Contact3);
-            myAddressBook.AddContact(Contact4);
 
-             myAddressBook.SearchByCountry("olympus");
-
-         
+                 string country = "Asgard";
+            List<Contacts> contactsInCountry = myAddressBook.GetContactsByCountry(country);
+            Console.WriteLine("\nContacts in {0}:", country);
+            foreach (var contact in contactsInCountry)
+            {
+                Console.WriteLine("{0} {1}", contact.firstName, contact.lastName);
+            }
         }
     }
 }
