@@ -13,13 +13,7 @@
             myAddressBook.AddContact(Contact2);
             myAddressBook.AddContact(Contact3);
 
-                 string country = "Asgard";
-            List<Contacts> contactsInCountry = myAddressBook.GetContactsByCountry(country);
-            Console.WriteLine("\nContacts in {0}:", country);
-            foreach (var contact in contactsInCountry)
-            {
-                Console.WriteLine("{0} {1}", contact.firstName, contact.lastName);
-            }
+            myAddressBook.PrintContactCountByCountry();
         }
     }
 }
